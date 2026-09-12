@@ -10,12 +10,12 @@ Put one **Question** to a panel of independent **Jurors** and bring back what th
 
 **Empanel an odd number** — three unless the Question is genuinely hard. Above four jurors, ask the human first; that is real money. Jurors must not see each other's ballots, so dispatch them in parallel and never relay one juror's answer to another.
 
-**Vary what backs them where you can.** Use your subagent mechanism's per-agent model setting if it has one; otherwise shell out to whatever sibling CLIs are installed (`claude -p --model`, `opencode run -m`, `codex exec -m`, `gemini -p -m`, `cursor-agent -p --model`, `copilot -p --model`, `ollama run`) — one juror each, in parallel. If only one model is reachable, still empanel independent jurors, and **say so in the verdict**: same-model agreement is weak evidence of anything.
+**Vary what backs them where you can.** Use your subagent mechanism's per-agent model setting if it has one; otherwise shell out to whatever sibling CLIs are installed (`claude -p --model`, `opencode run -m`, `codex exec -m`, `gemini -p -m`, `cursor-agent -p --model`, `copilot -p --model`, `ollama run`) — one juror each, in parallel. If only one model is reachable, still empanel independent jurors — independent sampling has real value — but the ballots will show it: same-model agreement is weak evidence of anything.
 
-Instruct each juror to answer and nothing else — no editing, no tools, no recommendations to you — in exactly this block:
+Instruct each juror to answer and nothing else — no editing, no tools, no recommendations to you — in exactly this block, naming the model that backs them so the human can see how varied the panel really was:
 
 ```
-🗳️ **<juror>** — **VOTE: <the chosen option, or a one-line answer>**
+🗳️ **Juror <n>** (<the model backing them>) — **VOTE: <the chosen option, or a one-line answer>**
 
 **Reasoning:** <why>
 **Trade-offs:** <what it costs — or, for a multiple-choice Question, why not the others>

@@ -43,7 +43,7 @@ Ask your agent to convene a court:
 ...or just describe the decision and say you want a jury on it. Each juror returns one block:
 
 ```
-🗳️ **Juror 2** — **VOTE: Stay on the event store**
+🗳️ **Juror 2** (claude-opus-5) — **VOTE: Stay on the event store**
 
 **Reasoning:** The migration cost is front-loaded and the pain you describe is read-side...
 **Trade-offs:** Postgres would have simplified reporting, and you keep carrying...
@@ -53,7 +53,7 @@ The agent hands you all of them, then its own read — in that order.
 
 ### A note on model diversity
 
-A jury of three agents all backed by the same model is one model in a trench coat. Their agreement is much weaker evidence than it looks. `court` varies the backing model where your environment permits — native per-subagent model settings, or shelling out to whichever sibling CLIs you have installed — and tells you when it couldn't.
+A jury of three agents all backed by the same model is one model in a trench coat. Their agreement is much weaker evidence than it looks. `court` varies the backing model where your environment permits — native per-subagent model settings, or shelling out to whichever sibling CLIs you have installed. Every ballot names the model behind it, so a panel that ended up single-model is visible in the output rather than something you have to remember to ask about.
 
 ## Repo layout
 
