@@ -28,4 +28,4 @@ A juror may reject the framing outright: if the options are all bad or the Quest
 
 **Report the ballots verbatim.** Every one, in full, to the human — your summary is not a substitute for them. Table them only when the answers are commensurable, which in practice means the multiple-choice case; open-ended answers usually sit on different axes, and the first thing a cell truncates is the reasoning. Do not tally, do not call a split a hung jury, and never convene a second round to break a tie: a split is a valid verdict.
 
-Then give your own read as the Judge — clearly marked as yours, after the ballots, never in place of them. The human decides. You are done when the ballots are in front of them.
+Then give your own read as the Judge — clearly marked as yours, after the ballots, never in place of them. **Stop there.** The Court shows the human what the jurors said and what you make of it; it does not decide, and it does not act on the verdict. The human decides. You are done when the ballots and your read are in front of them.
