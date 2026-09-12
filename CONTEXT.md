@@ -12,15 +12,15 @@ The matter put before the jury by the Judge. Domain-agnostic: may come from any 
 
 ## Jury
 
-The panel of Jurors empaneled for one Court. Jurors may or may not disagree; disagreement is signal, not failure.
+The panel of Jurors empaneled for one Court. Odd-numbered by default, so a majority exists when the Question has options; sized to how hard the Question is. Jurors may or may not disagree; disagreement is signal, not failure.
 
 ## Juror
 
-One independent agent on the panel, ideally backed by a model different from the other jurors'. Which models are available depends on the harness the court runs in; the roster is discovered at runtime, not hard-coded.
+One independent agent on the panel. What model backs a juror is chosen by the Judge, not by the Court — the Court empanels subagents and asks for their view.
 
 ## Ballot
 
-A single Juror's answer to the Question: their position, reasoning, and vote. Cast blind by default — a juror does not see other ballots before casting.
+A single Juror's answer to the Question: their vote, their reasoning, and the trade-offs they weighed. The vote is a choice among the options, or a one-line answer when the Question is open-ended. Cast blind by default — a juror does not see other ballots before casting.
 
 ## Debate Round
 
