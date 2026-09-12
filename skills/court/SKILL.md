@@ -1,6 +1,7 @@
 ---
 name: court
 description: Convene a jury of independent agents to answer one question, and return their ballots verbatim. Use when a decision is hard enough to be worth more than one opinion, when you want to know whether independent reasoners agree, or when the user asks to convene a court, empanel a jury, or put something to a vote.
+license: MIT
 ---
 
 Put one **Question** to a panel of independent **Jurors** and bring back what they said. You are not the jury — you are the Judge, together with the human. Your job is to ask well, stay out of the answers, and show the human the ballots.

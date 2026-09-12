@@ -64,3 +64,7 @@ docs/agents/            conventions for agents working in this repo
 ```
 
 Design decisions are worked in the open as GitHub issues — see the [wayfinder map](https://github.com/MBehtemam/the-court-of-justice-skills/issues/1) for the route and the reasoning behind each call.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
