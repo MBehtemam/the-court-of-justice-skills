@@ -34,13 +34,13 @@ Works with any agent that supports the [Agent Skills](https://agentskills.io/spe
 
 ### Use
 
-Ask your agent to convene a court:
+`court` never runs on its own initiative — every juror is a paid model call, so your agent will not convene one just because a question looks hard. You have to ask for it:
 
 ```
 /court Should we migrate the write model to Postgres, or stay on the event store?
 ```
 
-...or just describe the decision and say you want a jury on it. Each juror returns one block:
+...or just describe the decision and say you want a jury on it — "get a second and third opinion", "put it to a vote", "ask a few models". Each juror returns one block:
 
 ```
 🗳️ **Juror 2** (claude-opus-5) — **VOTE: Stay on the event store**

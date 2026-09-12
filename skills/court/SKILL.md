@@ -1,10 +1,13 @@
 ---
 name: court
-description: Convene a jury of independent agents to answer one question, and return their ballots verbatim. Use when a decision is hard enough to be worth more than one opinion, when you want to know whether independent reasoners agree, or when the user asks to convene a court, empanel a jury, or put something to a vote.
+description: 'Convene a jury of independent agents to answer one question, and return their ballots verbatim. Every juror is a separate model call, so this is expensive and is never worth invoking on your own initiative — use it ONLY when the user explicitly asks for it, by name or by clear description: "/court", "convene a court", "empanel a jury", "put it to a jury/vote", "get a second and third opinion on this", "ask a few models". A hard decision, a disagreement, or a question you find difficult is NOT a trigger on its own; answer it yourself and, at most, mention that a court is available.'
 license: MIT
+compatibility: 'Spends real money — one model call per juror, three or more per court. Needs either a subagent mechanism with a per-agent model setting, or sibling agent CLIs on PATH to shell out to.'
 ---
 
 Put one **Question** to a panel of independent **Jurors** and bring back what they said. You are not the jury — you are the Judge, together with the human. Your job is to ask well, stay out of the answers, and show the human the ballots.
+
+**Only run if the user asked for a court.** Every juror costs a model call. If you reached this skill on your own judgement rather than an explicit request, stop and answer the question yourself — offering a court is enough.
 
 **Classify the Question.** Multiple-choice if it offers options, open-ended otherwise — a near-mechanical read of its surface, not a judgement on the merits. Write it once, in full, and send every juror that same text. No angles, no personas, no "you are the skeptic": an assigned stance manufactures the disagreement the court exists to measure.
 
