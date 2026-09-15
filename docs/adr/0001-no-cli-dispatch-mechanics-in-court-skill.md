@@ -1,0 +1,5 @@
+# Don't prescribe specific CLIs or model IDs for varying juror backing
+
+`skills/court/SKILL.md` used to instruct the Judge to shell out to a fixed list of sibling CLIs (`claude -p --model`, `opencode run -m`, `codex exec -m`, `gemini -p -m`, `cursor-agent -p --model`, `copilot -p --model`, `ollama run`) to vary what backs each Juror. In practice this caused the Judge to invent plausible-looking model ID strings (e.g. `gpt-5.1`, `gpt-5.1-codex`) that don't exist on the target CLI's `--model` flag, failing outright.
+
+We decided the skill should not name specific CLIs, flags, or model IDs at all — it should instruct the Judge to vary backing models via whatever mechanism its own harness actually provides, and fall back to independent sampling on one model if nothing else is available. This matches the existing glossary: "What model backs a juror is chosen by the Judge, not by the Court." Baking in CLI syntax and model names couples the skill to a fast-moving, harness-specific detail that the skill has no way to keep current, and breaks for any Judge running in an environment not on the list.

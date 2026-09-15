@@ -2,7 +2,7 @@
 name: court
 description: 'Convene a jury of independent agents to answer one question, and return their ballots verbatim. Every juror is a separate model call, so this is expensive and is never worth invoking on your own initiative — use it ONLY when the user explicitly asks for it, by name or by clear description: "/court", "convene a court", "empanel a jury", "put it to a jury/vote", "get a second and third opinion on this", "ask a few models". A hard decision, a disagreement, or a question you find difficult is NOT a trigger on its own; answer it yourself and, at most, mention that a court is available.'
 license: MIT
-compatibility: 'Spends real money — one model call per juror, three or more per court. Needs either a subagent mechanism with a per-agent model setting, or sibling agent CLIs on PATH to shell out to.'
+compatibility: 'Spends real money — one model call per juror, three or more per court. Varying the backing model per juror is a bonus, not a requirement — falls back to independent sampling on one model if the environment offers no way to vary it.'
 ---
 
 Put one **Question** to a panel of independent **Jurors** and bring back what they said. You are not the jury — you are the Judge, together with the human. Your job is to ask well, stay out of the answers, and show the human the ballots.
@@ -13,7 +13,7 @@ Put one **Question** to a panel of independent **Jurors** and bring back what th
 
 **Empanel an odd number** — three unless the Question is genuinely hard. Above four jurors, ask the human first; that is real money. Jurors must not see each other's ballots, so dispatch them in parallel and never relay one juror's answer to another.
 
-**Vary what backs them where you can.** Use your subagent mechanism's per-agent model setting if it has one; otherwise shell out to whatever sibling CLIs are installed (`claude -p --model`, `opencode run -m`, `codex exec -m`, `gemini -p -m`, `cursor-agent -p --model`, `copilot -p --model`, `ollama run`) — one juror each, in parallel. If only one model is reachable, still empanel independent jurors — independent sampling has real value — but the ballots will show it: same-model agreement is weak evidence of anything.
+**Vary what backs them where you can.** Use whatever mechanism your own environment actually provides for giving different subagents different models or backends — a per-agent model setting, sibling CLIs you know to be installed, or anything else at hand. Don't invent a CLI invocation, flag, or model name you haven't confirmed exists in this environment; a guessed model string fails outright and costs the juror. If you can't vary the backing model, still empanel independent jurors — independent sampling has real value — but the ballots will show it: same-model agreement is weak evidence of anything.
 
 Instruct each juror to answer and nothing else — no editing, no tools, no recommendations to you — in exactly this block, naming the model that backs them so the human can see how varied the panel really was:
 
